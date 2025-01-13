@@ -1,4 +1,4 @@
-package telran.game.config;
+package telran.game.db.jpa.config;
 
 import java.net.URL;
 import java.util.List;
@@ -36,12 +36,6 @@ public class BullsCowsPersistenceUnitInfo implements PersistenceUnitInfo {
         return null;
     }
 
-    @SuppressWarnings("removal")
-    @Override
-    public PersistenceUnitTransactionType getTransactionType() {
-        return null;
-    }
-
     @Override
     public DataSource getJtaDataSource() {
         return null;
@@ -50,8 +44,10 @@ public class BullsCowsPersistenceUnitInfo implements PersistenceUnitInfo {
     @Override
     public DataSource getNonJtaDataSource() {
         HikariDataSource ds = new HikariDataSource();
-        ds.setJdbcUrl(String.format("jdbc:postgresql://%s:5432/postgres",
-                System.getenv("POSTGRES_HOST")));
+        ds.setJdbcUrl("jdbc:postgresql://%s:%s/%s".formatted(
+                System.getenv("POSTGRES_HOST"),
+                System.getenv("POSTGRES_PORT"),
+                System.getenv("POSTGRES_DB")));
         ds.setPassword(System.getenv("POSTGRES_PASSWORD"));
         ds.setUsername("postgres");
         ds.setDriverClassName("org.postgresql.Driver");
@@ -76,10 +72,10 @@ public class BullsCowsPersistenceUnitInfo implements PersistenceUnitInfo {
     @Override
     public List<String> getManagedClassNames() {
         return List.of(
-                "telran.game.entities.Game",
-                "telran.game.entities.Gamer",
-                "telran.game.entities.GameGamer",
-                "telran.game.entities.MoveResult");
+                "telran.game.db.jpa.GameEntity",
+                "telran.game.db.jpa.GamerEntity",
+                "telran.game.db.jpa.GameGamerEntity",
+                "telran.game.db.jpa.MoveEntity");
     }
 
     @Override
@@ -114,11 +110,16 @@ public class BullsCowsPersistenceUnitInfo implements PersistenceUnitInfo {
 
     @Override
     public void addTransformer(ClassTransformer transformer) {
-       
     }
 
     @Override
     public ClassLoader getNewTempClassLoader() {
+        return null;
+    }
+
+    @SuppressWarnings("removal")
+    @Override
+    public PersistenceUnitTransactionType getTransactionType() {
         return null;
     }
 
