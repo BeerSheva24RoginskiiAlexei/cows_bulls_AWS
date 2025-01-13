@@ -1,7 +1,7 @@
 package telran.game;
 
-import telran.game.entities.Gamer;
-import telran.game.entities.Game;
+import telran.game.db.jpa.entities.Game;
+import telran.game.db.jpa.entities.Gamer;
 
 public class MoveResult {
     private String sequence;

@@ -1,4 +1,4 @@
-package telran.game.entities;
+package telran.game.db.jpa.entities;
 
 import jakarta.persistence.*;
 

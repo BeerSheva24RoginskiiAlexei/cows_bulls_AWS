@@ -1,8 +1,8 @@
 package telran.game;
 
 import telran.game.db.BullCowService;
-import telran.game.db.BullCowServiceImpl;
-import telran.game.db.BullsCowsRepositoryJpaImp;
+import telran.game.db.jpa.BullCowServiceImpl;
+import telran.game.db.jpa.BullsCowsRepositoryJpaImp;
 import telran.game.db.BullsCowsRepository;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;

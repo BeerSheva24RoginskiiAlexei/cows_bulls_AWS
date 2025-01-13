@@ -1,8 +1,10 @@
-package telran.game.db;
+package telran.game.db.jpa;
 
 import java.time.LocalDate;
 
-import telran.game.entities.Game;
+import telran.game.db.BullCowService;
+import telran.game.db.BullsCowsRepository;
+import telran.game.db.jpa.entities.Game;
 import telran.game.exceptions.GameNotFoundException;
 
 public class BullCowServiceImpl implements BullCowService {

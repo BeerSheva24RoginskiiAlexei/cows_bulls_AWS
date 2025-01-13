@@ -1,4 +1,4 @@
-package telran.game.config;
+package telran.game.db.jpa.config;
 
 import java.net.URL;
 import java.util.List;

@@ -1,13 +1,14 @@
-package telran.game.db;
+package telran.game.db.jpa;
 
 import jakarta.persistence.EntityManager;
 
 import java.time.LocalDate;
 import java.util.List;
 import telran.game.MoveResult;
-import telran.game.entities.Game;
-import telran.game.entities.GameGamer;
-import telran.game.entities.Gamer;
+import telran.game.db.BullsCowsRepository;
+import telran.game.db.jpa.entities.Game;
+import telran.game.db.jpa.entities.GameGamer;
+import telran.game.db.jpa.entities.Gamer;
 import telran.game.exceptions.GameNotFoundException;
 import telran.game.exceptions.GamerNotFoundException;
 

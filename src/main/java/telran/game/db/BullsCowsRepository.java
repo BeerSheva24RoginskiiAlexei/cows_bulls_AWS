@@ -4,7 +4,7 @@ import java.time.LocalDate;
 import java.util.List;
 
 import telran.game.MoveResult;
-import telran.game.entities.Game;
+import telran.game.db.jpa.entities.Game;
 
 public interface BullsCowsRepository {
     public boolean isGamerExists(String username);
